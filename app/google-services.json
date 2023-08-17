@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "613346300859",
+    "project_id": "pawseekers",
+    "storage_bucket": "pawseekers.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613346300859:android:99daf286fd2c1377bfaa9e",
+        "android_client_info": {
+          "package_name": "com.dk.pawseekers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613346300859-pk3ttvo4o8ag58nhmq2q8a62r9u8i0gi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjvktk0ZXJT7O89HtsMMcmmThjT-k_axc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613346300859-pk3ttvo4o8ag58nhmq2q8a62r9u8i0gi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
