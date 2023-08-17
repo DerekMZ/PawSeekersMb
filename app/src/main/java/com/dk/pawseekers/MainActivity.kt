@@ -13,8 +13,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 
 
-private lateinit var name: TextView
-private lateinit var correo: TextView
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         //views
         var btnReg = findViewById(R.id.btnReg) as Button
         var btnIn = findViewById(R.id.btnIn) as Button
+        var btnInfo = findViewById(R.id.btnInfo) as Button
         var btnMap = findViewById(R.id.btnMap) as Button        //variables de los botones
 
         btnReg.setOnClickListener{
@@ -38,6 +38,10 @@ class MainActivity : AppCompatActivity() {
         btnIn.setOnClickListener{
             val goLog = Intent(this, Login::class.java) //Start Login
             startActivity(goLog)
+        }
+        btnInfo.setOnClickListener{
+            val goDetail = Intent(this, Detalles::class.java) //Start Login
+            startActivity(goDetail)
         }
 
         btnMap.setOnClickListener{

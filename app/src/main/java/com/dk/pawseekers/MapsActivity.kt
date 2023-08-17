@@ -1,5 +1,6 @@
 package com.dk.pawseekers
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -10,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.cardview.widget.CardView
 import androidx.core.app.ActivityCompat
+import androidx.core.graphics.set
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -34,22 +36,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     private lateinit var lastLocation: Location
     private lateinit var fusedLocationClient: FusedLocationProviderClient       //varaibles del mapa y ubicacion
 
-    val url = "https://paw-seekers-api-vented5.vercel.app/api/missing_nearby/0"
 
 
-    val dog = LatLng(28.6616476,-106.0404666)
-    val dog2 = LatLng(28.64506774511174, -106.09616975742165)
-    val dog3 = LatLng(28.652816276950986, -106.09077481132292)
-    val dog4 = LatLng(28.641751839636466, -106.13183150523109)
-    val dog5 = LatLng(28.62096033741411, -106.11831066225983)
-    val dog6 = LatLng(28.615077452044552, -106.12284829332147)
-    val dog7 = LatLng(28.658847007934128, -106.08454225144168)          //variables de ubicacion
 
-    val prueba = "probando " +
-            "raza alta " +
-            "morado"
+    val dog = LatLng(28.6099568, -106.1212242)
+    val dog2 = LatLng(28.6180023, -106.1098469)
+    val dog3 = LatLng(29.1550849, -111.0035675)
+         //variables de ubicacion
 
-    val prueba2 = "que onda"
     companion object{
         private const val LOCATION_REQUEST_CODE = 1
     }
@@ -80,13 +74,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         setUpMap()
 
 
-            mMap.addMarker(MarkerOptions().position(dog).title("Demo dog")) //se agregan las ubicaciones de los perros
-            mMap.addMarker(MarkerOptions().position(dog2).title("Demo dog2"))
-            mMap.addMarker(MarkerOptions().position(dog3).title("Demo dog3"))
-            mMap.addMarker(MarkerOptions().position(dog4).title("Demo dog4"))
-            mMap.addMarker(MarkerOptions().position(dog5).title("Demo dog5"))
-            mMap.addMarker(MarkerOptions().position(dog6).title("Demo dog6"))
-            mMap.addMarker(MarkerOptions().position(dog7).title(prueba))
+            mMap.addMarker(MarkerOptions().position(dog).title("Jupiter")) //por medio de las varaibles dog obtenemos
+            mMap.addMarker(MarkerOptions().position(dog2).title("Gato"))
+            mMap.addMarker(MarkerOptions().position(dog3).title("Chalino"))
+
 
 
 
@@ -111,22 +102,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         val smallMarkerIcon3 = BitmapDescriptorFactory.fromBitmap(bitmap3)
         googleMap.addMarker(MarkerOptions().position(dog3).icon(smallMarkerIcon3))
 
-        val bitmap4 = Bitmap.createScaledBitmap(viewToBitMap(cardView)!!, cardView.width, cardView.height, false)
-        val smallMarkerIcon4 = BitmapDescriptorFactory.fromBitmap(bitmap4)
-        googleMap.addMarker(MarkerOptions().position(dog4).icon(smallMarkerIcon4))
 
-        val bitmap5 = Bitmap.createScaledBitmap(viewToBitMap(cardView)!!, cardView.width, cardView.height, false)
-        val smallMarkerIcon5 = BitmapDescriptorFactory.fromBitmap(bitmap5)
-        googleMap.addMarker(MarkerOptions().position(dog5).icon(smallMarkerIcon5))
 
-        val bitmap6 = Bitmap.createScaledBitmap(viewToBitMap(cardView)!!, cardView.width, cardView.height, false)
-        val smallMarkerIcon6 = BitmapDescriptorFactory.fromBitmap(bitmap6)
-        googleMap.addMarker(MarkerOptions().position(dog6).icon(smallMarkerIcon6))
-
-        val bitmap7 = Bitmap.createScaledBitmap(viewToBitMap(cardView)!!, cardView.width, cardView.height, false)
-        val smallMarkerIcon7 = BitmapDescriptorFactory.fromBitmap(bitmap7)
-        googleMap.addMarker(MarkerOptions().position(dog7).icon(smallMarkerIcon7))
         }
+
+
 
     private fun viewToBitMap(view: View): Bitmap?{
         view.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED)
