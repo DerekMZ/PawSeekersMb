@@ -12,6 +12,8 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val url = "https://paw-seekers-api-vented5.vercel.app/api/missing_nearby/0"
+
         // get reference to all views
         var et_user_name = findViewById(R.id.user_name) as EditText
         var et_password = findViewById(R.id.et_password) as EditText

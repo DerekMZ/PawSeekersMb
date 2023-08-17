@@ -12,6 +12,8 @@ class Register : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        val url = "https://paw-seekers-api-vented5.vercel.app/api/missing_nearby/12"
+
         // get reference to all views
         var et_user_name = findViewById(R.id.user_name) as EditText
         var et_email = findViewById(R.id.et_email) as EditText
